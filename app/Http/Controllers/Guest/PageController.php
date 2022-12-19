@@ -24,4 +24,12 @@ class PageController extends Controller
         // dd($movies);
         return view('pages.catalogue', compact('movies'));
     }
+
+    //metodo per prendere i dettagli di un singolo item
+    public function show($id)
+    {
+        $movie = Movie::find($id);
+        // dd($movie);
+        return view('pages.singlemovie', compact('movie'));
+    }
 }

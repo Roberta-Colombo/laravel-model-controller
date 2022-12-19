@@ -23,9 +23,8 @@
 <main>
     @yield('title')
 
-    <div>
     @yield('paragraph')
-    </div>
+    
 </main>
 
 @include('partials.footer')

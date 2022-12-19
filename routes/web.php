@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'index'])->name('home');
 
 Route::get('/catalogue', [PageController::class, "getMovies"])->name('catalogue');
+
+//show: metodo per chiamare dettagli di un singolo elemento
+Route::get('/catalogue/{id}', [PageController::class, 'show'])->name('singlemovie');

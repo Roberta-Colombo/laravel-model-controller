@@ -9,12 +9,13 @@
 {{-- Slider con 5 dei film più votati (voto minimo 8.5) --}}
 
 @section('paragraph')
-<div class="slider-layout">
+<div class="container">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             @forelse ($bestRated as $item)
-          <div class="carousel-item active">
-            <img src="{{ $item->image }}" class="d-block w-100" alt="Locandina {{ $item->title }}">
+            {{-- per cambiare classe active dinamicamente --}}
+          <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+            <img class="slide-img" src="{{ $item->image }}" class="d-block" alt="Locandina {{ $item->title }}">
             <div class="carousel-caption d-none d-md-block my-caption">
                 <div class="title">{{ $item->title }}</div>
             </div>
